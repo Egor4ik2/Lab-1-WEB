@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Навчальна сторінка</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo" onmouseover="showAuthorInfo()" onmouseout="hideAuthorInfo()">Лого</a>
+        <div class="author-info" id="author-info">
+            <img src="./img/logol.png" alt="Фото автора" width="40px" height="40px">
+            <p>Автор: Egor</p>
+        </div>
+        
+        <ul>
+            <li><a href="javascript:void(0);" onclick="showCalculator()">Завдання 1</a></li>
+            <li><a href="javascript:void(0);" onclick="showTask('task2')">Завдання 2</a></li>
+            <li><a href="javascript:void(0);" onclick="showTask('task3')">Завдання 3</a></li>
+        </ul>
+    </nav>
+    
+    <section id="welcome">
+        <h2>Виберіть завдання</h2>
+    </section>
+
+    <section id="calculator" class="hidden">
+        <h2>Калькулятор</h2>
+        <div class="calculator">
+            <input type="text" id="display" disabled>
+            <div class="buttons">
+                <button onclick="clearDisplay()">C</button>
+                <button onclick="appendToDisplay('1')">1</button>
+                <button onclick="appendToDisplay('2')">2</button>
+                <button onclick="appendToDisplay('3')">3</button>
+                <button onclick="appendToDisplay('4')">4</button>
+                <button onclick="appendToDisplay('5')">5</button>
+                <button onclick="appendToDisplay('6')">6</button>
+                <button onclick="appendToDisplay('7')">7</button>
+                <button onclick="appendToDisplay('8')">8</button>
+                <button onclick="appendToDisplay('9')">9</button>
+                <button onclick="appendToDisplay('0')">0</button>
+                <button onclick="appendToDisplay('.')">.</button>
+                <button onclick="appendToDisplay('*')">*</button>
+                <button onclick="appendToDisplay('/')">/</button>
+                <button onclick="appendToDisplay('+')">+</button>
+                <button onclick="appendToDisplay('-')">-</button>
+                <button onclick="calculateResult()">=</button>
+            </div>
+        </div>
+    </section>
+    
+    <section id="task2" class="hidden">
+        <h2>Завдання 6: Вивести число у зворотному порядку цифр</h2>
+        <label for="number">Введіть число:</label>
+        <input type="number" id="number" placeholder="Введіть число">
+        <button onclick="reverseNumber()">Перевернути число</button>
+        <p id="resultTask2"></p>
+    </section>
+    
+
+    <section id="task3" class="hidden">
+        <h2>Завдання 7: Знайти суму і добуток цифр числа</h2>
+        <label for="number2">Введіть число:</label>
+        <input type="number" id="number2" placeholder="Введіть число">
+        <button onclick="sumAndProduct()">Обчислити</button>
+        <p id="resultTask3"></p>
+    </section>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
